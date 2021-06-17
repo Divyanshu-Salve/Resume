@@ -1,4 +1,4 @@
-	name: Latex Publish
+name: Latex Publish
 
 on:
   push:
