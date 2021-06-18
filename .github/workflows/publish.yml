@@ -13,12 +13,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: |
-            main.tex
-            main.tex
-          latexmk_use_lualatex: true
+        uses: xu-cheng/textlive-action/full@v1
+        with: 
+          run: |
+            xelatex main.tex
           post_compile: "mkdir -p public && mv main.pdf public/resume.pdf"
 
       - name: Deploy
