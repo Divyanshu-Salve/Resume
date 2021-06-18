@@ -15,8 +15,8 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/textlive-action/small@v1
         with: 
-          run: |
-            xelatex main.tex
+          root_file: main.tex
+          latexmk_use_xelatex: true
           post_compile: "mkdir -p public && mv main.pdf public/resume.pdf"
 
       - name: Deploy
